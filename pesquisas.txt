@@ -1,0 +1,8 @@
+https://www.devmedia.com.br/html5-storage-armazenando-dados-com-html5/28797
+
+
+trabalhando com array
+https://medium.com/@osuissa/javascript-buscas-em-arrays-parte-1-aff64d22174
+
+
+http://www.linhadecodigo.com.br/artigo/3511/criando-um-filtro-automatico-nas-colunas-de-uma-tabela-html.aspx
