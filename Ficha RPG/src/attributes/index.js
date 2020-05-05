@@ -1,25 +1,23 @@
-const detalhesPessoais = (function() {
+const attributes = (function() {
 
   const module = {}
 
   module._style = () => {
-
     const $head = document.querySelector('head')
     const $style = document.createElement('style')
 
     $style.textContent = `
-      .detalhes {
-        float: left;
-
+    
+      .atributos {
+        float:left;
         width: 190px;
-        height: 150px;
+        height: 260px;
         margin-top: 12px;
-
-        border-radius: 10px;
         border: 2px solid #000;
+        border-radius: 10px;
       }
-      
-      .detalhes h2 {
+
+      .atributos h2 {
         padding-top: 7px;
         font-size: 14px;
         text-align: center;
@@ -28,13 +26,14 @@ const detalhesPessoais = (function() {
       }
     `
     $head.insertAdjacentElement('beforeend', $style)
+
   }
 
   module.render = () => {
 
     module._style()
 
-    return `<div class="detalhes"><h2>Detalhes Pessoais</h2></div>`
+    return `<div class="atributos"><h2>Atributos</h2></div>`
   }
 
   return {
