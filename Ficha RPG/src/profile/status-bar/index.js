@@ -18,14 +18,18 @@ const statusBar = (function() {
     .barra h3 {
       position: absolute;
     }
+
+    
       
     `
     $head.insertAdjacentElement('beforeend', $style)
   }
 
-  module.render = () => {
+  module.render = (type) => {
     module._style()
-    return `<div class="barra"><h3>Vida ${"9/13"}</h3></div>`
+    return `
+    <div class="barra"><h3> ${type + "9/13"}</h3></div>
+    `
   }
 
   return {

@@ -1,4 +1,4 @@
-const detalhesPessoais = (function() {
+const personalDetails = (function() {
 
   const module = {}
 
@@ -26,6 +26,7 @@ const detalhesPessoais = (function() {
         text-transform: uppercase;
 
       }
+
     `
     $head.insertAdjacentElement('beforeend', $style)
   }

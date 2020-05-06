@@ -12,36 +12,67 @@ const profile = (function() {
         width: 200px;
         height: 423px;
         margin-top: 12px;
-        border: 2px solid #000;
+
+        position: relative;
         display:flex;
         flex-wrap: wrap;
         justify-content: center;
+
+        /*border: 2px solid #000;*/
+        
       }
 
-      .profile .foto{
-        display: block;
-        width: 75px;
-        height: 111px;
-        background-color: rgba(0,0,0,.7);
-        border: 2px solid #000;
-        border-radius: 10px;
-      }
-
-      .profile p {
-        font-size: 8px;
+      .profile > .separa {
+        width: 100%;
+        height: 260px;
+        bottom: -5px;
         position: absolute;
-        top: 160px;
+        
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        /*border: 2px solid #000;*/
       }
       
     `
     $head.insertAdjacentElement('beforeend', $style)
   }
 
-  module._foto = () => {
 
-    const foto = ""
 
-    return `<img class="foto" src="${foto}" alt="foto"><p>Colar foto aqui</p>`
+  module._children = () => {
+
+    const $photograph = photograph.render()
+
+    const $lifeBar = statusBar.render('Vida ')
+    const $checktInconciente = checkBox.render('Inconciente')
+    const $checktLesao = checkBox.render('Lesão Grave')
+    const $checktMorrendo = checkBox.render('Morrendo')
+
+    const $sanityBar = statusBar.render('Sanidade ')
+    const $checktInsanidadeTemp = checkBox.render('Insanidade Temp.')
+    const $checktInsanidadeIndef = checkBox.render('Insanidade Indef.')
+
+    const $combat = combat.render()
+    
+
+    return `
+    
+    ${$photograph}
+    <div class="separa">
+      ${$lifeBar}
+      ${$checktInconciente}
+      ${$checktLesao}
+      ${$checktMorrendo}
+      ${$sanityBar}
+      ${$checktInsanidadeTemp}
+      ${$checktInsanidadeIndef}
+      ${$combat}
+    </div>
+    
+    `
+
   }
 
 
@@ -49,9 +80,7 @@ const profile = (function() {
     module._style()
     return `
     <div class="profile">
-      ${module._foto()}
-      ${statusBar.render()}
-      ${statusBar.render()}
+      ${module._children()}
     </div>
     `
   }

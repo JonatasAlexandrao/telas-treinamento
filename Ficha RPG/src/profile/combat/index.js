@@ -1,4 +1,4 @@
-const weapons = (function() {
+const combat = (function() {
 
   const module = {}
 
@@ -7,15 +7,19 @@ const weapons = (function() {
     const $style = document.createElement('style')
 
     $style.textContent = `
-      .armas {
+      .combate {
+        position: relative;
         float: left;
-        width: 400px;
-        height: 155px;
-        margin-top: 10px;
+        width: 200px;
+        height: 95px;
+        bottom: -8px;
+
+        /*margin-top: 10px;*/
         border: 2px solid #000;
         border-radius: 10px;
+        
       }
-      .armas h2 {
+      .combate h2 {
         padding-top: 7px;
         font-size: 14px;
         text-align: center;
@@ -27,7 +31,7 @@ const weapons = (function() {
 
   module.render = () => {
     module._style()
-    return `<div class="armas"><h2>Armas</h2></div>`
+    return `<div class="combate"><h2>Combate</h2></div>`
   }
 
   return {
