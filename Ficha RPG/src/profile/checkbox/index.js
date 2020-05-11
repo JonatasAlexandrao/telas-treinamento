@@ -1,26 +1,54 @@
 const checkBox = (function() {
   const module = {}
 
-   module._style = () => {
+   module.style = () => {
      const $head = document.querySelector('head')
      const $style = document.createElement('style')
 
      $style.textContent = `
-     .profile li {
-        list-style: none;
+     .profile .container {
+        
+        display: inline-block;
       }
      .profile li label {
         font-size: 9px;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-left: 5px;
+      }
+      .container-checkbox {
+        list-style: none;
+        display: inline-block;
+        width: 70px;
+        position: relative;
+      }
+
+      .container-checkbox.-lesaoGrave {
+        position: absolute;
+        right: 0;
+        padding-right: 11px;
+      }
+      .container-checkbox.-morrendo {
+        /*padding: 10px;*/
+        position: absolute;
+        bottom: 8px;
+        left: 70px;
+      }
+      .container-checkbox.-insanIndef {
+        position: absolute;
+        right: 0;
+        padding-right: 11px;
       }
      `
      $head.insertAdjacentElement('beforeend', $style)
   }
 
-  module.render = (content) => {
+  module.render = (content, classe='') => {
 
-    module._style()
     return `
-    <li>
+    <li class="container-checkbox ${classe}">
       <input class="checkbox" type="checkbox" name="${content}">
       <label for="${content}">${content}</label>
     </li>
@@ -28,7 +56,8 @@ const checkBox = (function() {
   }
 
   return {
-    render: module.render
+    render: module.render,
+    style: module.style
   }
 
 })()

@@ -14,6 +14,8 @@ const photograph = (function() {
       background-color: rgba(0,0,0,.7);
       border: 2px solid #000;
       border-radius: 10px;
+
+      
     }
 
     .profile p {
@@ -21,6 +23,11 @@ const photograph = (function() {
       position: absolute;
       top: 160px;
     }
+
+    .container > .labelFoto {
+      position: relative;
+    }
+    
     `
     $head.insertAdjacentElement('beforeend', $style)
   }
@@ -29,7 +36,7 @@ const photograph = (function() {
 
     module._style()
 
-    return `<li><img class="foto" src="" alt="foto" name="info"><label for="info">Colar foto aqui</label></li>`
+    return `<li class='container'><img class="foto" src="" alt="foto" name="info"><label class="labelFoto" for="info">Colar foto aqui</label></li>`
   }
 
   return {

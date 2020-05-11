@@ -14,9 +14,7 @@ const profile = (function() {
         margin-top: 12px;
 
         position: relative;
-        display:flex;
-        flex-wrap: wrap;
-        justify-content: center;
+       
 
         /*border: 2px solid #000;*/
         
@@ -28,12 +26,28 @@ const profile = (function() {
         bottom: -5px;
         position: absolute;
         
-        display:flex;
+        /*display:flex;
         flex-wrap: wrap;
         justify-content: center;
 
-        /*border: 2px solid #000;*/
+        border: 2px solid #000;*/
       }
+
+      .container {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .container-barras {
+        padding: 0 11px;
+        position: relative;
+        width: 200px;
+        height: 80px;
+        box-sizing: border-box;
+
+      }
+
       
     `
     $head.insertAdjacentElement('beforeend', $style)
@@ -43,16 +57,19 @@ const profile = (function() {
 
   module._children = () => {
 
+    checkBox.style()
+    statusBar.style()
+
     const $photograph = photograph.render()
 
-    const $lifeBar = statusBar.render('Vida ')
+    const $lifeBar = statusBar.render('Vida ', 'barra-vida')
     const $checktInconciente = checkBox.render('Inconciente')
-    const $checktLesao = checkBox.render('Lesão Grave')
-    const $checktMorrendo = checkBox.render('Morrendo')
+    const $checktLesao = checkBox.render('Lesão Grave', '-lesaoGrave')
+    const $checktMorrendo = checkBox.render('Morrendo', '-morrendo')
 
-    const $sanityBar = statusBar.render('Sanidade ')
+    const $sanityBar = statusBar.render('Sanidade ', 'barra-sanidade')
     const $checktInsanidadeTemp = checkBox.render('Insanidade Temp.')
-    const $checktInsanidadeIndef = checkBox.render('Insanidade Indef.')
+    const $checktInsanidadeIndef = checkBox.render('Insanidade Indef.', '-insanIndef')
 
     const $combat = combat.render()
     
@@ -61,13 +78,17 @@ const profile = (function() {
     
     ${$photograph}
     <div class="separa">
-      ${$lifeBar}
-      ${$checktInconciente}
-      ${$checktLesao}
-      ${$checktMorrendo}
-      ${$sanityBar}
-      ${$checktInsanidadeTemp}
-      ${$checktInsanidadeIndef}
+      <div class="container-barras">
+        ${$lifeBar}
+        ${$checktInconciente}
+        ${$checktLesao}
+        ${$checktMorrendo}
+      </div>
+      <div class="container-barras">
+        ${$sanityBar}
+        ${$checktInsanidadeTemp}
+        ${$checktInsanidadeIndef}
+      </div>
       ${$combat}
     </div>
     

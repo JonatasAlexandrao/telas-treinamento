@@ -9,12 +9,10 @@ const combat = (function() {
     $style.textContent = `
       .combate {
         position: relative;
-        float: left;
-        width: 200px;
+        
         height: 95px;
-        bottom: -8px;
+        top: 2px;
 
-        /*margin-top: 10px;*/
         border: 2px solid #000;
         border-radius: 10px;
         
@@ -29,9 +27,31 @@ const combat = (function() {
     $head.insertAdjacentElement('beforeend', $style)
   }
 
+  module._esquiva = () => {
+    const $esquivar = singleAttribute.render({atrib: 'Esquivar'})
+
+    const $head = document.querySelector('head')
+    const $style = document.createElement('style')
+
+    $style.textContent = `
+      
+    
+    `
+    $head.insertAdjacentElement('beforeend', $style)
+
+    return $esquivar
+  }
+
   module.render = () => {
     module._style()
-    return `<div class="combate"><h2>Combate</h2></div>`
+
+    
+
+    return `
+    <div class="combate">
+      <h2>Combate</h2>
+      ${module._esquiva()}
+    </div>`
   }
 
   return {
