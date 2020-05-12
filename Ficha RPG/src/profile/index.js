@@ -48,6 +48,8 @@ const profile = (function() {
 
       }
 
+      ${checkBox.style()}
+      ${statusBar.style()}
       
     `
     $head.insertAdjacentElement('beforeend', $style)
@@ -56,9 +58,6 @@ const profile = (function() {
 
 
   module._children = () => {
-
-    checkBox.style()
-    statusBar.style()
 
     const $photograph = photograph.render()
 
@@ -70,6 +69,7 @@ const profile = (function() {
     const $sanityBar = statusBar.render('Sanidade ', 'barra-sanidade')
     const $checktInsanidadeTemp = checkBox.render('Insanidade Temp.')
     const $checktInsanidadeIndef = checkBox.render('Insanidade Indef.', '-insanIndef')
+    const $pontosMagia = singleAttribute.pontosMagia()
 
     const $combat = combat.render()
     
@@ -88,6 +88,7 @@ const profile = (function() {
         ${$sanityBar}
         ${$checktInsanidadeTemp}
         ${$checktInsanidadeIndef}
+        ${$pontosMagia}
       </div>
       ${$combat}
     </div>
@@ -105,6 +106,7 @@ const profile = (function() {
     </div>
     `
   }
+ 
 
   return {
     render: module.render

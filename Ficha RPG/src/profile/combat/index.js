@@ -10,8 +10,8 @@ const combat = (function() {
       .combate {
         position: relative;
         
-        height: 95px;
-        top: 2px;
+        height: 90px;
+        top: 7px;
 
         border: 2px solid #000;
         border-radius: 10px;
@@ -28,7 +28,7 @@ const combat = (function() {
   }
 
   module._esquiva = () => {
-    const $esquivar = singleAttribute.render({atrib: 'Esquivar'})
+    const $esquivar = singleAttribute.render({atrib: 'esquivar'})
 
     const $head = document.querySelector('head')
     const $style = document.createElement('style')

@@ -47,6 +47,7 @@ const attributesContainer = (function() {
     const $edu = singleAttribute.render({atrib: 'Edu'})
     const $pod = singleAttribute.render({atrib: 'Pod'})
     
+    const $taxaMov = singleAttribute.taxaMov()
     
     
 
@@ -60,6 +61,7 @@ const attributesContainer = (function() {
     ${$int}
     ${$pod}
     ${$sor}
+    ${$taxaMov}
     
     `
   }

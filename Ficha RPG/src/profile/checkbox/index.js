@@ -41,6 +41,7 @@ const checkBox = (function() {
         right: 0;
         padding-right: 11px;
       }
+
      `
      $head.insertAdjacentElement('beforeend', $style)
   }
@@ -49,8 +50,8 @@ const checkBox = (function() {
 
     return `
     <li class="container-checkbox ${classe}">
-      <input class="checkbox" type="checkbox" name="${content}">
-      <label for="${content}">${content}</label>
+      <input class="checkbox" type="checkbox" id="${content.replace(' ', '-')}">
+      <label for="${content.replace(' ', '-')}">${content}</label>
     </li>
     `
   }
