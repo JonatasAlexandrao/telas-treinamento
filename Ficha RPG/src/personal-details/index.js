@@ -31,6 +31,10 @@ const personalDetails = (function() {
     $head.insertAdjacentElement('beforeend', $style)
   }
 
+  module.doubleClick = () => {
+    
+  }
+
   module.render = () => {
 
     module._style()
